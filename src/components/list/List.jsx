@@ -25,17 +25,18 @@ const List = () => {
         <div className="list">
             <span className="listTitle">Continue to watch</span>
             <div className="wrapper">
-                <ArrowBackIosOutlined 
-                className="sliderArrow left"
-                 onClick={() => handleClick("left")}
-                 style={{display: !isMoved && "none"}}
-                  />
+                <ArrowBackIosOutlined
+                    className="sliderArrow left"
+                    onClick={() => handleClick("left")}
+                    style={{ display: !isMoved && "none" }}
+                />
                 <div className="container" ref={listRef}>
-                    <ListItem />
-                    <ListItem />
-                    <ListItem />
-                    <ListItem />
-                    <ListItem />
+                    <ListItem index={0} />
+                    <ListItem index={1} />
+                    <ListItem index={2} />
+                    <ListItem index={3} />
+                    <ListItem index={4} />
+                    <ListItem index={5} />
                 </div>
                 <ArrowForwardIosOutlined className="sliderArrow right" onClick={() => handleClick("right")} />
             </div>
