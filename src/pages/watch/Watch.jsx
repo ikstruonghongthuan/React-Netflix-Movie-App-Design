@@ -11,7 +11,7 @@ const Watch = () => {
                 Home
             </div>
             <video className="video" autoPlay progress controls
-                src="https://vod-progressive.akamaized.net/exp=1628681877~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F4341%2F20%2F521707474%2F2437261031.mp4~hmac=55e9d45898ddff4afd71cf8737b494ef16947577513d0f9cdd784e4efba223a9/vimeo-prod-skyfire-std-us/01/4341/20/521707474/2437261031.mp4?filename=Ink+-+67358.mp4"
+                src="https://cdn.videvo.net/videvo_files/video/free/2021-04/small_watermarked/210329_06B_Bali_1080p_013_preview.webm"
             />
         </div>
     )
