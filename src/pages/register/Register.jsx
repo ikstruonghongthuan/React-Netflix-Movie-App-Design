@@ -1,11 +1,14 @@
 import { useRef } from 'react';
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
 import './register.scss'
 
 const Register = () => {
     let history = useHistory();
+    const { signup } = useAuth()
     const [email, setEmail] = useState("");
+    const [loading, setLoading] = useState("");
     //const [password, setPassword] = useState("");
 
     const emailRef = useRef();
@@ -14,10 +17,18 @@ const Register = () => {
     const handleStart = () => {
         setEmail(emailRef.current.value)
     }
-    const handleFinish = () => {
+
+    const handleFinish = async () => {
         //setPassword(passwordRef.current.value)
-        history.push('/')
+        try {
+            setLoading(true)
+            await signup(email, passwordRef.current.value)
+            history.push('/')
+        } catch {
+            console.log('Fail to sign up')
+        }
     }
+
     return (
         <div className="register">
             <div className="top">
@@ -40,7 +51,7 @@ const Register = () => {
                 ) : (
                     <form className="input">
                         <input type="password" placeholder="password" ref={passwordRef} />
-                        <button className="registerButton" onClick={handleFinish}>Start</button>
+                        <button className="registerButton" onClick={handleFinish} disabled={loading}>Start</button>
                     </form>
                 )}
             </div>
