@@ -1,10 +1,12 @@
 import { useRef } from 'react';
 import { useState } from 'react'
+import { useHistory } from 'react-router-dom';
 import './register.scss'
 
 const Register = () => {
+    let history = useHistory();
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    //const [password, setPassword] = useState("");
 
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -13,14 +15,15 @@ const Register = () => {
         setEmail(emailRef.current.value)
     }
     const handleFinish = () => {
-        setPassword(passwordRef.current.value)
+        //setPassword(passwordRef.current.value)
+        history.push('/')
     }
     return (
         <div className="register">
             <div className="top">
                 <div className="wrapper">
                     <img className="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png" alt="" />
-                    <button className="loginButton">Sign In</button>
+                    <button className="loginButton" onClick={() => history.push('/Login')}>Sign In</button>
                 </div>
             </div>
             <div className="container">

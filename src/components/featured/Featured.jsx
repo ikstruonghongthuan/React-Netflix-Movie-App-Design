@@ -1,7 +1,9 @@
 import { InfoOutlined, PlayArrow } from '@material-ui/icons'
+import { useHistory } from 'react-router-dom';
 import React from './featured.scss'
 
 const Featured = ({ type }) => {
+    let history = useHistory();
     return (
         <div className="featured">
             {type && (
@@ -32,7 +34,7 @@ const Featured = ({ type }) => {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores animi, laboriosam maxime tenetur accusantium corrupti, distinctio quos aliquid porro ducimus a sapiente. Culpa, neque! Explicabo obcaecati culpa quis libero eius.
                 </span>
                 <div className="buttons">
-                    <button className="play">
+                    <button onClick={() => history.push("/Watch")} className="play">
                         <PlayArrow />
                         <span>Play</span>
                     </button>

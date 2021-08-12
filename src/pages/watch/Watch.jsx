@@ -1,10 +1,12 @@
 import { ArrowBackOutlined } from '@material-ui/icons'
+import { useHistory } from 'react-router-dom'
 import React from './watch.scss'
 
 const Watch = () => {
+    let history = useHistory()
     return (
         <div className="watch">
-            <div className="back">
+            <div className="back" onClick={() => history.push('/')}>
                 <ArrowBackOutlined />
                 Home
             </div>
